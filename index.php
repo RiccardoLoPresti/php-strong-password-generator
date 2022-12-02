@@ -21,11 +21,7 @@ if (isset($_GET['user_number']) && ($_GET['user_number'] < 8 || $_GET['user_numb
     header('Location: success.php');
 }
 
-
-
-
 //var_dump($_GET['user_number']);
-
 
 ?>
 <!DOCTYPE html>

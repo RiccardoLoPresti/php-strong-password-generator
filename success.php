@@ -25,9 +25,9 @@ require_once 'vars.php';
                 <h1>Password Generator</h1>
 
                 <h3>La tua password è: 
-                    <span>
+                    <p>
                         <?php echo getRandom($_SESSION['user_number'],$letters,$numbers,$specials) ?>
-                    </span> 
+                    </p> 
                 </h3>
 
                 <a href="index.php">torna alla Home</a>
