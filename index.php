@@ -1,6 +1,5 @@
 <!--
 
-Scriviamo tutto (logica e layout) in un unico file index.php
 Milestone 2
 Verificato il corretto funzionamento del nostro codice, spostiamo la logica in un file functions.php che includeremo poi nella pagina principale
 Milestone 3
@@ -12,40 +11,10 @@ buona password! :pulcino_che_esce_da_uovo:
 -->
 <?php
 
-$letters=['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m','Q','W','E','R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M'];
-
-$numbers=[1,2,3,4,5,6,7,8,9,0];
-
-$specials=['!','&','%','$','<','>','^','+','-','*','/','(',')','[',']','{','}','@','#','_','='];
-
+require_once 'functions.php';
+require_once 'vars.php';
 
 //var_dump($_GET['user_number']);
-
-function getRandom($userNumb,$letters,$numbers,$specials){
-    $result=[];
-
-    shuffle($letters) ;
-    //print_r($letters);
-
-    shuffle($numbers);
-    //print_r($numbers);
-
-    shuffle($specials);
-    //print_r($specials);
-
-    $temp_result = array_merge($specials,$letters,$numbers);
-
-    shuffle($temp_result);
-    //print_r($temp_result);
-
-    $results = array_slice($temp_result, 0, $userNumb);
-    //print_r($results);
-
-    return implode('',$results);
-
-}
-
-
 
 ?>
 <!DOCTYPE html>
