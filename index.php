@@ -1,6 +1,5 @@
 <!--
-Milestone 1
-Creare un form che invii in GET la lunghezza della password. Una nostra funzione utilizzerà questo dato per generare una password casuale (composta da lettere, lettere maiuscole, numeri e simboli (!?&%$<>^+-*/()[]{}@#_=)) da restituire all’utente.
+
 Scriviamo tutto (logica e layout) in un unico file index.php
 Milestone 2
 Verificato il corretto funzionamento del nostro codice, spostiamo la logica in un file functions.php che includeremo poi nella pagina principale
@@ -20,7 +19,7 @@ $numbers=[1,2,3,4,5,6,7,8,9,0];
 $specials=['!','&','%','$','<','>','^','+','-','*','/','(',')','[',']','{','}','@','#','_','='];
 
 
-var_dump($_GET);
+//var_dump($_GET['user_number']);
 
 function getRandom($userNumb,$letters,$numbers,$specials){
     $result=[];
