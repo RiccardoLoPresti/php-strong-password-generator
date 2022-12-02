@@ -11,16 +11,18 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
+require_once 'functions.php';
+require_once 'vars.php';
+
 if (isset($_GET['user_number']) && ($_GET['user_number'] < 8 || $_GET['user_number'] > 32)) {
     header('Location: failed.php');
-}else{
+}elseif(isset($_GET['user_number'])){
     $_SESSION['user_number'] = $_GET['user_number'];
     header('Location: success.php');
 }
 
 
-require_once 'functions.php';
-require_once 'vars.php';
+
 
 //var_dump($_GET['user_number']);
 
@@ -58,23 +60,12 @@ require_once 'vars.php';
                         </div>
 
                     </form>
-                <?php elseif(($_GET['user_number']) < 8 || ($_GET['user_number']) > 32) : ?>
-
-                    <h3>Il numero inserito non è valido</h3>
-
-                <?php else: ?>
-                
-                    <h3>La tua password è:</h3>
-                    <?php echo getRandom($_GET['user_number'],$letters,$numbers,$specials) ?>
 
                 <?php endif; ?>
             
-
             </div>
         </div>
     </div>
     
-    
-
 </body>
 </html>

@@ -5,6 +5,8 @@ session_start();
 require_once 'functions.php';
 require_once 'vars.php';
 
+//var_dump($_SESSION['user_number']);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,10 +25,12 @@ require_once 'vars.php';
                 <h1>Password Generator</h1>
 
                 <h3>La tua password è: 
-                    <span class="bg-info">
+                    <span>
                         <?php echo getRandom($_SESSION['user_number'],$letters,$numbers,$specials) ?>
                     </span> 
                 </h3>
+
+                <a href="index.php">torna alla Home</a>
 
             </div>
         </div>

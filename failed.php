@@ -24,6 +24,8 @@ require_once 'vars.php';
 
                 <h3>Il numero inserito non è valido</h3>
 
+                <a href="index.php">torna alla HOME</a>
+
             </div>
         </div>
     </div>
