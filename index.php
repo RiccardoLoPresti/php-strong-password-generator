@@ -1,9 +1,5 @@
 <!--
 
-Milestone 2
-Verificato il corretto funzionamento del nostro codice, spostiamo la logica in un file functions.php che includeremo poi nella pagina principale
-Milestone 3
-Invece di visualizzare la password nella index, effettuare un redirect ad una pagina dedicata che tramite $_SESSION recupererà la password da mostrare all’utente.
 Milestone 4 (BONUS)
 Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, lettere e simboli. Possono essere scelti singolarmente (es. solo numeri) oppure possono essere combinati fra loro (es. numeri e simboli, oppure tutti e tre insieme).
 Dare all’utente anche la possibilità di permettere o meno la ripetizione di caratteri uguali.
@@ -11,10 +7,23 @@ buona password! :pulcino_che_esce_da_uovo:
 -->
 <?php
 
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+if (isset($_GET['user_number']) && ($_GET['user_number'] < 8 || $_GET['user_number'] > 32)) {
+    header('Location: failed.php');
+}else{
+    $_SESSION['user_number'] = $_GET['user_number'];
+    header('Location: success.php');
+}
+
+
 require_once 'functions.php';
 require_once 'vars.php';
 
 //var_dump($_GET['user_number']);
+
 
 ?>
 <!DOCTYPE html>
